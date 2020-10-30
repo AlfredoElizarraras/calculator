@@ -1,6 +1,59 @@
-# Getting Started with Create React App
+<h1 align="center">
+  :1234: Math Magicians Calculator :crystal_ball:
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
+
+* [About the Project](#about-the-project)
+* [Live Demo](#live-demo)
+* [Getting started](#getting-started)
+* [Prerequisites](#prerequisites)
+* [Built With](#built-with)
+* [Available Scripts](#available-scripts)
+* [Run automated tests](#run-automated-tests)
+* [Deployment](#deployment)
+* [Authors](#authors)
+* [Contributing](#contributing)
+* [Acknowledgments](#acknowledgments)
+* [Screen shots](screen-shots)
+* [License](#license)
+
+## About the project
+
+> This app helps Math Magicians bussines on doing some of they daily calculations. 
+  It's purpose is to showcase what I have learn about basics of react.
+
+## Live Demo
+
+Coming soon.
+
+## Getting started
+
+To get a local copy up and running follow these simple example steps
+
+- Clone the repository by running in the console of your local machine the following command
+
+  ```
+  git clone https://github.com/AlfredoElizarraras/calculator.git
+  ```
+- Change directory to calculator new directory:
+  ```
+  cd calculator
+  ```
+- Install all the necessary packages with:
+  ```
+  npm install
+  ```
+
+## Prerequisites
+
+- node version: 14.15.0
+- npm version: 6.14.8
+- heroku cli: heroku/7.46.2
+
+## Built with
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Available Scripts
 
@@ -39,32 +92,57 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Run automated test
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- npm test
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+- To deploy your own version of this calculator run in Heroku, run the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```
+  heroku create -b https://github.com/mars/create-react-app-buildpack.git calculator-by-your-name
+  ```
 
-### Analyzing the Bundle Size
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Oscar Alfredo Gómez Elizarrarás**
 
-### Making a Progressive Web App
+- Github: [@AlfredoElizarraras](https://github.com/AlfredoElizarraras)
+- Twitter: [@OscarAlfredoGm4](https://twitter.com/OscarAlfredoGm4)
+- Linkedin: [@OscarAlfredoGómezElizarrarás](https://mx.linkedin.com/in/oscar-alfredo-gomez-elizarraras)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to check the [issues page](https://github.com/AlfredoElizarraras/calculator/issues).
 
-### Deployment
+### Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Give a ⭐️ if you like this project!
 
-### `yarn build` fails to minify
+## Acknowlegdments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Microverse](https://microverse.org)
+
+## Screen shots
+
+Coming soon
+
+---
+
+## License
+
+
+This project is [MIT](https://github.com/AlfredoElizarraras/calculator/blob/master/LICENSE) licensed.
+
+Copyright 2020 Oscar Alfredo Gómez Elizarrarás
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
