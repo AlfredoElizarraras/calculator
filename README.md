@@ -25,7 +25,7 @@
 
 ## Live Demo
 
-Coming soon.
+https://calculator-mathmagicians.herokuapp.com/
 
 ## Getting started
 
