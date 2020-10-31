@@ -1,10 +1,6 @@
-import React, { Component } from "react";
-import "./index.css";
+import React from 'react';
+import './index.css';
 
-class App extends Component {
-  render() {
-    return <div className="App">Math magicians calculator</div>;
-  }
-}
+const App = () => <div className="App">Math magicians calculator</div>;
 
 export default App;
