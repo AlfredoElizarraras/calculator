@@ -1,6 +1,13 @@
 import React from 'react';
 import './index.css';
+import Display from '../Display';
+import ButtonPanel from '../ButtonPanel';
 
-const App = () => <div className="App">Math magicians calculator</div>;
+const App = () => (
+  <>
+    <Display />
+    <ButtonPanel />
+  </>
+);
 
 export default App;
