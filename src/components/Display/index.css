@@ -1,4 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
+.flex {
+  display: flex;
+}
+
+.display {
+  box-sizing: border-box;
+  width: 700px;
+  height: 100px;
+  color: #ffffff;
+  font-weight: bold;
+  justify-content: right;
+  align-items: center;
+  padding-right: 0.8rem;
+  font-size: 50px;
+  background-color: #858193;
 }

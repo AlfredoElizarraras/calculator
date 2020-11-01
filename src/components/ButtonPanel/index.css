@@ -1,4 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.group {
+  height: 100px;
+}
+
+.buttonPanel {
+  box-sizing: border-box;
+  width: 700px;
 }
