@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+.group {
+  height: 100px;
+}
+
 .buttonPanel {
+  box-sizing: border-box;
   width: 700px;
 }
