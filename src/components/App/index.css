@@ -1,4 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.app {
+  width: 700px;
+  margin: 0 auto;
 }

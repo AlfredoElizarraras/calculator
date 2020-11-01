@@ -3,7 +3,7 @@ import Proptypes from 'prop-types';
 import './index.css';
 
 const Display = ({ operationResult = '0' }) => (
-  <div>{operationResult}</div>
+  <div className="display flex">{operationResult}</div>
 );
 
 Display.prototypes = {

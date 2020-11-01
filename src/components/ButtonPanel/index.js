@@ -3,7 +3,7 @@ import Button from '../Button';
 import './index.css';
 
 const ButtonPanel = () => (
-  <div>
+  <div className="buttonPanel flex flex-column">
     <div className="group1">
       <Button btnName="AC" />
       <Button btnName="+/-" />
