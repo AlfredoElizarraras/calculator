@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Proptypes from 'prop-types';
 import './index.css';
 
-const Button = ({ btnName = '', color = '', wide = false }) => {
+const Button = ({ btnName = '', color = '', wide = '' }) => {
   const cssClass = `btn btn-bg-color ${wide ? 'w-50' : 'w-25'}`;
   return (
     <button type="button" className={cssClass} style={{ backgroundColor: color }}>
@@ -13,14 +14,15 @@ const Button = ({ btnName = '', color = '', wide = false }) => {
 
 Button.prototypes = {
   btnName: Proptypes.string,
-  className: Proptypes.string,
+  color: Proptypes.string,
   wide: Proptypes.bool,
 };
 
 Button.defaultProps = {
   btnName: '',
-  className: '',
+  color: '',
   wide: false,
 };
 
 export default Button;
+/* eslint-enable react/prop-types */
