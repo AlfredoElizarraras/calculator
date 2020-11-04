@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: null,
+      total: 0,
       next: null,
       operation: null,
     };
@@ -26,9 +26,14 @@ class App extends Component {
 
   render() {
     const { total, next, operation } = this.state;
-    const result = next && operation
-      ? `${total} ${operation} ${next}`
-      : `${total}`;
+    let result = '';
+    if (operation && next !== null) {
+      result += total + operation + next;
+    } else if (operation) {
+      result += total + operation;
+    } else {
+      result += total;
+    }
     return (
       <div className="app flex flex-column">
         <Display operationResult={result} />

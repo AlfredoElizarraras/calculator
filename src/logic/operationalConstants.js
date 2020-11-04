@@ -1,7 +1,7 @@
 export const SUM = '+';
 export const SUBTRACT = '-';
 export const MULTIPLY = 'x';
-export const DIVIDE = '/';
+export const DIVIDE = '÷';
 export const JOIN = '∪';
 export const CLEAR = 'AC';
 export const PLUS_NEGATIVE = '+/-';

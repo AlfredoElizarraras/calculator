@@ -2,37 +2,36 @@ import Big from 'big.js';
 import * as operations from './operationalConstants';
 
 const operate = (numberOne, numberTwo, operation) => {
-  let numOne;
-  let numTwo;
-  let result;
-
-  if (operation !== operations.JOIN) {
-    numOne = Big(parseFloat(numberOne));
-    numTwo = Big(parseFloat(numberTwo));
-  }
+  let result = 0;
 
   switch (operation) {
     case operations.SUM:
-      result = Big(numOne + numberTwo);
+      result = Big(parseFloat(numberOne) + parseFloat(numberTwo));
       break;
     case operations.SUBTRACT:
-      result = Big(numOne - numTwo);
+      result = Big(parseFloat(numberOne) - parseFloat(numberTwo));
       break;
     case operations.MULTIPLY:
-      result = Big(numOne * numTwo);
+      result = Big(parseFloat(numberOne) * parseFloat(numberTwo));
       break;
     case operations.DIVIDE:
-      if (numTwo === 0) {
+      if (parseFloat(numberTwo) === 0) {
         result = null;
       } else {
-        result = Big(numOne / numTwo);
+        result = Big(parseFloat(numberOne) / parseFloat(numberTwo));
       }
       break;
     case operations.JOIN:
-      result = `${numOne}${numTwo}`;
+      if ((numberOne === 0 || numberOne === null) && (numberTwo !== operations.DOT)) {
+        result = `${numberTwo}`;
+      } else if (numberTwo === 0 && numberOne === 0) {
+        result = `${numberTwo}`;
+      } else {
+        result = `${numberOne}${numberTwo}`;
+      }
       break;
     case operations.PERCENTAGE:
-      result = Big(numOne * 0.01);
+      result = Big(parseFloat(numberOne) * 0.01);
       break;
     default:
       result = null;
