@@ -3,22 +3,29 @@ import * as operations from './operationalConstants';
 
 const operate = (numberOne, numberTwo, operation) => {
   let result = 0;
+  let numOne = 0;
+  let numTwo = 0;
+
+  if (operation !== operations.JOIN) {
+    numTwo = numberTwo !== null ? Big(parseFloat(numberTwo)) : 0;
+    numOne = numberOne !== null ? Big(parseFloat(numberOne)) : 0;
+  }
 
   switch (operation) {
     case operations.SUM:
-      result = Big(parseFloat(numberOne) + parseFloat(numberTwo));
+      result = numOne.plus(numTwo);
       break;
     case operations.SUBTRACT:
-      result = Big(parseFloat(numberOne) - parseFloat(numberTwo));
+      result = numOne.minus(numTwo);
       break;
     case operations.MULTIPLY:
-      result = Big(parseFloat(numberOne) * parseFloat(numberTwo));
+      result = numOne.times(numTwo);
       break;
     case operations.DIVIDE:
-      if (parseFloat(numberTwo) === 0) {
+      if (numTwo === 0) {
         result = null;
       } else {
-        result = Big(parseFloat(numberOne) / parseFloat(numberTwo));
+        result = numOne.div(numTwo);
       }
       break;
     case operations.JOIN:
@@ -31,7 +38,7 @@ const operate = (numberOne, numberTwo, operation) => {
       }
       break;
     case operations.PERCENTAGE:
-      result = Big(parseFloat(numberOne) * 0.01);
+      result = numOne.times(0.01);
       break;
     default:
       result = null;
