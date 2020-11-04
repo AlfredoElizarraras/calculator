@@ -31,6 +31,9 @@ const operate = (numberOne, numberTwo, operation) => {
     case operations.JOIN:
       result = `${numOne}${numTwo}`;
       break;
+    case operations.PERCENTAGE:
+      result = Big(numOne * 0.01);
+      break;
     default:
       result = null;
       break;

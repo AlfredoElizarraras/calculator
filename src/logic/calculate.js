@@ -44,12 +44,12 @@ const calculate = (calculator, buttonName) => {
         if (next) {
           returnValue = {
             total,
-            next: operate(next, '0.01', operations.MULTIPLY),
+            next: operate(next, null, operations.PERCENTAGE),
             operation,
           };
         } else if (total) {
           returnValue = {
-            total: operate(total, '0.01', operations.MULTIPLY),
+            total: operate(total, null, operations.PERCENTAGE),
             next,
             operation,
           };

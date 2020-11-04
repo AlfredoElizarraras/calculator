@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Proptypes from 'prop-types';
 import './index.css';
@@ -15,3 +16,4 @@ Display.defaultProps = {
 };
 
 export default Display;
+/* eslint-enable react/prop-types */

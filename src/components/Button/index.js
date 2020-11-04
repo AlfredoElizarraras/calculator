@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Proptypes from 'prop-types';
 import './index.css';
@@ -24,3 +25,4 @@ Button.defaultProps = {
 };
 
 export default Button;
+/* eslint-enable react/prop-types */
