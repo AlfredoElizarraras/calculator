@@ -78,12 +78,12 @@ const calculate = (calculator, buttonName) => {
         if (next) {
           returnValue = {
             total,
-            next: operate(next, operations.DOT, operations.JOIN),
+            next: next.includes('.') ? next : operate(next, operations.DOT, operations.JOIN),
             operation,
           };
-        } else if (total) {
+        } else if (total !== null) {
           returnValue = {
-            total: operate(total, operations.DOT, operations.JOIN),
+            total: `${total}`.includes('.') ? total : operate(total, operations.DOT, operations.JOIN),
             next,
             operation,
           };
@@ -94,13 +94,13 @@ const calculate = (calculator, buttonName) => {
            || buttonName === operations.SUBTRACT
            || buttonName === operations.MULTIPLY
            || buttonName === operations.DIVIDE) {
-          if (!next) {
+          if (next === null) {
             returnValue = {
               total,
               next,
               operation: buttonName,
             };
-          } else if (next && operation) {
+          } else if (next !== null && operation !== null) {
             returnValue = {
               total: operate(total, next, operation),
               next: null,
@@ -111,15 +111,17 @@ const calculate = (calculator, buttonName) => {
         break;
     }
   } else if (!Number.isNaN(+buttonName)) {
-    if (next) {
+    if (operation !== null) {
       returnValue = {
         total,
         next: operate(next, buttonName, operations.JOIN),
         operation,
       };
-    } else if (total) {
+    } else if (total !== null) {
       returnValue = {
         total: operate(total, buttonName, operations.JOIN),
+        next,
+        operation,
       };
     }
   }

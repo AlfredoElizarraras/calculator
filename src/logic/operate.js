@@ -2,37 +2,43 @@ import Big from 'big.js';
 import * as operations from './operationalConstants';
 
 const operate = (numberOne, numberTwo, operation) => {
-  let numOne;
-  let numTwo;
-  let result;
+  let result = 0;
+  let numOne = 0;
+  let numTwo = 0;
 
   if (operation !== operations.JOIN) {
-    numOne = Big(parseFloat(numberOne));
-    numTwo = Big(parseFloat(numberTwo));
+    numTwo = numberTwo !== null ? Big(parseFloat(numberTwo)) : 0;
+    numOne = numberOne !== null ? Big(parseFloat(numberOne)) : 0;
   }
 
   switch (operation) {
     case operations.SUM:
-      result = Big(numOne + numberTwo);
+      result = numOne.plus(numTwo);
       break;
     case operations.SUBTRACT:
-      result = Big(numOne - numTwo);
+      result = numOne.minus(numTwo);
       break;
     case operations.MULTIPLY:
-      result = Big(numOne * numTwo);
+      result = numOne.times(numTwo);
       break;
     case operations.DIVIDE:
       if (numTwo === 0) {
         result = null;
       } else {
-        result = Big(numOne / numTwo);
+        result = numOne.div(numTwo);
       }
       break;
     case operations.JOIN:
-      result = `${numOne}${numTwo}`;
+      if ((numberOne === 0 || numberOne === null) && (numberTwo !== operations.DOT)) {
+        result = `${numberTwo}`;
+      } else if (numberTwo === 0 && numberOne === 0) {
+        result = `${numberTwo}`;
+      } else {
+        result = `${numberOne}${numberTwo}`;
+      }
       break;
     case operations.PERCENTAGE:
-      result = Big(numOne * 0.01);
+      result = numOne.times(0.01);
       break;
     default:
       result = null;
