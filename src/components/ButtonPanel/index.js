@@ -3,41 +3,45 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import Button from '../Button';
 import './index.css';
-import * as operations from '../../logic/operationalConstants';
+import { BUTTONS, ZERO, EQUAL } from '../../logic/operationalConstants';
 
-const ButtonPanel = ({ clickHandler }) => (
-  <div className="buttonPanel flex flex-column">
-    <div className="group">
-      <Button onClick={clickHandler} btnName={operations.CLEAR} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.PLUS_NEGATIVE} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.PERCENTAGE} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.DIVIDE} />
-    </div>
-    <div className="group">
-      <Button onClick={clickHandler} btnName={operations.SEVEN} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.EIGHT} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.NINE} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.MULTIPLY} />
-    </div>
-    <div className="group">
-      <Button onClick={clickHandler} btnName={operations.FOUR} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.FIVE} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.SIX} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.SUBTRACT} />
-    </div>
-    <div className="group">
-      <Button onClick={clickHandler} btnName={operations.ONE} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.TWO} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.THREE} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.SUM} />
-    </div>
-    <div className="group">
-      <Button onClick={clickHandler} btnName={operations.ZERO} color="#dfdfdf" wide="true" />
-      <Button onClick={clickHandler} btnName={operations.DOT} color="#dfdfdf" />
-      <Button onClick={clickHandler} btnName={operations.EQUAL} />
-    </div>
-  </div>
-);
+const ButtonPanel = ({ clickHandler }) => {
+  const groups = [];
+  let row = [];
+  let numberOfItems = 0;
+  for (let buttonIndex = 0; buttonIndex < BUTTONS.length; buttonIndex += 1) {
+    if (numberOfItems === 3 || BUTTONS[buttonIndex] === EQUAL) {
+      row.push(
+        <Button onClick={clickHandler} btnName={BUTTONS[buttonIndex]} />,
+      );
+      groups.push(<div className="group">{row}</div>);
+      row = [];
+      numberOfItems = 0;
+    } else {
+      const isZero = BUTTONS[buttonIndex] === ZERO;
+      if (isZero) {
+        row.push(
+          <Button
+            onClick={clickHandler}
+            btnName={BUTTONS[buttonIndex]}
+            color="#dfdfdf"
+            wide="true"
+          />,
+        );
+      } else {
+        row.push(
+          <Button
+            onClick={clickHandler}
+            btnName={BUTTONS[buttonIndex]}
+            color="#dfdfdf"
+          />,
+        );
+      }
+      numberOfItems += 1;
+    }
+  }
+  return <div className="buttonPanel flex flex-column">{groups}</div>;
+};
 
 Button.prototypes = {
   clickHandler: Proptypes.func,
